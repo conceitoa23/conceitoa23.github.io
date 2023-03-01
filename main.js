@@ -55,14 +55,14 @@ const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
 const mtlloader = new MTLLoader();
-mtlloader.setPath('https://github.com/conceitoa23/conceitoa23.github.io/blob/main/');
+mtlloader.setPath('https://github.com/conceitoa23/conceitoa23.github.io/');
 mtlloader.load(
     'caixinhapendrive.mtl', (materials) => {
     materials.preload();
 
     const objloader = new OBJLoader();
     objloader.setMaterials(materials);
-    objloader.setPath('https://github.com/conceitoa23/conceitoa23.github.io/blob/main/');
+    objloader.setPath('https://github.com/conceitoa23/conceitoa23.github.io/');
     objloader.load(
         'caixinhapendrive.obj', 
         (object) => {
