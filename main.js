@@ -55,16 +55,15 @@ const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
 const mtlloader = new MTLLoader();
-mtlloader.setPath('../');
 mtlloader.load(
-    'caixinhapendrive.mtl', (materials) => {
-    materials.preload();
+    '../caixinhapendrive.mtl', 
+    (materials) => {
+        materials.preload();
 
     const objloader = new OBJLoader();
     objloader.setMaterials(materials);
-    objloader.setPath('../');
     objloader.load(
-        'caixinhapendrive.obj', 
+        '../caixinhapendrive.obj', 
         (object) => {
             object.scale.set(80, 80, 80);
             scene.add(object);
