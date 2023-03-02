@@ -54,13 +54,13 @@ pointLight.position.set(50,50,50);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-const mtlloader = new THREE.MTLLoader();
+const mtlloader = new MTLLoader();
 mtlloader.load(
     '../caixinhapendrive.mtl', 
     (materials) => {
         materials.preload();
 
-    const objloader = new THREE.OBJLoader();
+    const objloader = new OBJLoader();
     objloader.setMaterials(materials);
     objloader.load(
         '../caixinhapendrive.obj', 
